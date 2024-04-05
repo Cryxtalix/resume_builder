@@ -13,21 +13,14 @@
   {
     devShells.${system}.default = pkgs.mkShell {
       nativeBuildInputs = with pkgs; [
-        html-tidy
-        htmldoc
-        jsbeautifier
+        chromium
       ];
       shellHook = ''
         echo "Started Resume builder development environment..."
         export PS1='\[\e[1m\](Nix-shell)[ \[\e[96m\]\w \[\e[39m\]]\\$ \[\e[0m\]'
 
-        format() {
-          tidy -qmi main.html
-          htmldoc main.html -f resume.pdf -t pdf14
-        }
-
         generate() {
-          htmldoc main.html -f resume.pdf -t pdf14
+          chromium --headless --no-pdf-header-footer --print-to-pdf="resume.pdf" main.html
         }
       '';
     };
