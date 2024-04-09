@@ -42,10 +42,6 @@ You can also refer to example.json file.
 
 Initialise the development environment in the flake with `nix develop`, and run `generate`.
 
-Otherwise, install chrome or chromium and run `node app.js && chromium --headless --no-pdf-header-footer --print-to-pdf="resume.pdf" http://localhost:3000`. Kill the server with Ctrl-C.
-
-A PDF resume will be generated in the folder.
-
 ### Other platforms
 * Install Chromium and NodeJS. 
 * Open the current folder in the terminal and run `npm install`.
