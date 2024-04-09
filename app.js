@@ -7,22 +7,12 @@ app.use(express.static(__dirname + '/'));
 
 let json;
 try {
-        json = require('./info.json');
+        json = require('./input/info.json');
 } catch(error) {
         console.error(error.message);
         console.error("\nPlease refer to readme for more details.");
         process.exit(1);
 }
-
-let get_info = () => {
-        let text = "|";
-        json.info.forEach(
-                data => {
-                        text += ` ${data} |`;
-                }
-        );
-        return text;
-};
 
 app.get('/', (req, res) => {
         res.render('index', {

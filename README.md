@@ -1,6 +1,6 @@
 # My Resume Builder
 
-Create a file `info.json`, with the following structure.
+Create a file `info.json`, with the following structure. Store the file in the input folder.
 
     {
         "Name": "",
@@ -35,8 +35,20 @@ Create a file `info.json`, with the following structure.
         ]
     }
 
-With nix, initialise the development environment in the flake with `nix develop`, and run `generate`.
+You can also refer to example.json file.
+
+## Generating resume
+### On Nix
+
+Initialise the development environment in the flake with `nix develop`, and run `generate`.
 
 Otherwise, install chrome or chromium and run `node app.js && chromium --headless --no-pdf-header-footer --print-to-pdf="resume.pdf" http://localhost:3000`. Kill the server with Ctrl-C.
 
 A PDF resume will be generated in the folder.
+
+### Other platforms
+* Install Chromium and NodeJS. 
+* Open the current folder in the terminal and run `npm install`.
+* Start node server with `node app.js & node_pid=$!`.
+* Generate resume with `chromium --headless --no-pdf-header-footer --print-to-pdf="resume.pdf" http://localhost:3000`.
+* Kill Node server with `kill $node_pid`.
