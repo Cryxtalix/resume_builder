@@ -5,7 +5,14 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname);
 app.use(express.static(__dirname + '/'));
 
-let json = require('./info.json');
+let json;
+try {
+        json = require('./info.json');
+} catch(error) {
+        console.error(error.message);
+        console.error("\nPlease refer to readme for more details.");
+        process.exit(1);
+}
 
 let get_info = () => {
         let text = "|";
@@ -28,5 +35,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3000, () => {
-        console.log('Server is running on http://localhost:3000');
+        console.log('http://localhost:3000');
 });

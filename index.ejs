@@ -26,13 +26,18 @@
     <div id="section_title">
       <hr><b>Education</b><hr>
     </div>
-    <% education.forEach(data => { %>
+    <% education.forEach((data, index) => { %>
       <% if (data.Grades == "") { %>
         <p><b><%= data.Title %></b>, <%= data.Institution %></p>
       <% } else { %>
         <p><b><%= data.Title %></b>, <%= data.Institution %>, <%= data.Grades %></p>
       <% }; %>
       <p><small><i><%= data.Years %></i></small></p>
+      
+      <!-- Add line break between entries -->
+      <% if (index !== education.length - 1) { %>
+        <br>
+      <% }; %>
     <% }) %>
   </div>  
 
@@ -40,7 +45,7 @@
     <div id="section_title">
       <hr><b>Work/Professional Experience</b><hr>
     </div>
-    <% work_experience.forEach(data => { %>
+    <% work_experience.forEach((data, index) => { %>
       <p><b><%= data.Institution %></b>, <%= data.Title %></p>
       <p><small><i><%= data.Years %></i></small></p>
       <ul>
@@ -48,6 +53,11 @@
           <li><%= des %></li>
         <% }) %>
       </ul>
+
+      <!-- Add line break between entries -->
+      <% if (index !== work_experience.length - 1) { %>
+        <br>
+      <% }; %>
     <% }) %>
   </div>
 
