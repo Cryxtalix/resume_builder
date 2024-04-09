@@ -3,12 +3,12 @@
 Create a file `info.js`, with the following info object.
 
     const info = {
-        name: "",
-        info: [
+        "Name": "",
+        "Info": [
             "...",
             ...
         ],
-        education: [
+        "Education": [
             {
                 "Title": "...",
                 "Institution": "...",
@@ -17,7 +17,7 @@ Create a file `info.js`, with the following info object.
             },
             ...
         ]
-        work_experience: [
+        "Work_Experience": [
             {
                 "Title": "...",
                 "Institution": "...",
@@ -29,7 +29,7 @@ Create a file `info.js`, with the following info object.
             },
             ...
         ],
-        skill: [
+        "Skill": [
             "...",
             ...
         ]

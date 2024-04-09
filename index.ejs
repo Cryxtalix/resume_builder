@@ -6,21 +6,61 @@
   <meta name="description" content="My Resume Writer">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-  <div id="Name">
+  <div class="Name">
     <h1><%= name %></h1>
   </div>
 
-  <div id="Info"></div>
+  <div class="Info">
+    <% let text = "|"; %>
+    <% info.forEach(data => { %>
+      <% text += ` ${data} |`; %>
+    <% }) %>
+    <p><small><%= text %></small></p>
+  </div>
   
-  <div id="Education"></div>
+  <div class="Education">
+    <div id="section_title">
+      <hr><b>Education</b><hr>
+    </div>
+    <% education.forEach(data => { %>
+      <% if (data.Grades == "") { %>
+        <p><b><%= data.Title %></b>, <%= data.Institution %></p>
+      <% } else { %>
+        <p><b><%= data.Title %></b>, <%= data.Institution %>, <%= data.Grades %></p>
+      <% }; %>
+      <p><small><i><%= data.Years %></i></small></p>
+    <% }) %>
+  </div>  
 
-  <div id="Work_Experience"></div>
+  <div class="Work_Experience">
+    <div id="section_title">
+      <hr><b>Work/Professional Experience</b><hr>
+    </div>
+    <% work_experience.forEach(data => { %>
+      <p><b><%= data.Institution %></b>, <%= data.Title %></p>
+      <p><small><i><%= data.Years %></i></small></p>
+      <ul>
+        <% data.Description.forEach(des => { %>
+          <li><%= des %></li>
+        <% }) %>
+      </ul>
+    <% }) %>
+  </div>
 
-  <div id="Skills/Certifications"></div><hr>
+  <div class="Skills/Certifications">
+    <div id="section_title">
+      <hr><b>Skills/Certifications</b><hr>
+    </div>
+    <ul>
+      <% skill.forEach(data => { %>
+        <li><%= data %></li>
+      <% }) %>
+    </ul>
+  </div><hr>
 
   <script src="app.js" defer></script>
 </body>
