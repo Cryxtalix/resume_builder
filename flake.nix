@@ -14,13 +14,17 @@
     devShells.${system}.default = pkgs.mkShell {
       nativeBuildInputs = with pkgs; [
         chromium
+        nodejs_21
       ];
       shellHook = ''
         echo "Started Resume builder development environment..."
         export PS1='\[\e[1m\](Nix-shell)[ \[\e[96m\]\w \[\e[39m\]]\\$ \[\e[0m\]'
 
         generate() {
-          chromium --headless --no-pdf-header-footer --print-to-pdf="resume.pdf" main.html
+          node app.js & 
+          node_pid=$! &&
+          chromium --headless --no-pdf-header-footer --print-to-pdf="resume.pdf" http://localhost:3000 &&
+          kill $node_pid
         }
       '';
     };
