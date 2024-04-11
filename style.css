@@ -9,21 +9,38 @@
 }
 
 .Education {
-        line-height: 1.2;
+        padding-top: 0.5%;
 }
 
 .Work_Experience {
-        line-height: 1.2;
+        padding-top: 0.5%;
 }
 
-.Skill {
-        line-height: 1.2;
+.Skills {
+        padding-top: 0.5%;
 }
 
 #section_title {
         text-align: center;
+        padding: 0.3%;
+        border-block: solid black;
+        border-radius: 0%;
+}
+
+#section_body {
+        line-height: 100%;
+        padding-top: 0.5%;
+}
+
+#section_item {
+        padding: 0.4%;
 }
 
 p {
-        margin: 0;
+        margin: 0%;
+}
+
+body {
+        border-bottom: solid black;
+        font-family: Arial, sans-serif;
 }

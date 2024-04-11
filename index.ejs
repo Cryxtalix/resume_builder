@@ -24,54 +24,57 @@
   
   <div class="Education">
     <div id="section_title">
-      <hr><b>Education</b><hr>
+      <b>Education</b>
     </div>
-    <% education.forEach((data, index) => { %>
-      <% if (data.Grades == "") { %>
-        <p><b><%= data.Title %></b>, <%= data.Institution %></p>
-      <% } else { %>
-        <p><b><%= data.Title %></b>, <%= data.Institution %>, <%= data.Grades %></p>
-      <% }; %>
-      <p><small><i><%= data.Years %></i></small></p>
-      
-      <!-- Add line break between entries -->
-      <% if (index !== education.length - 1) { %>
-        <br>
-      <% }; %>
-    <% }) %>
+
+    <div id="section_body">
+      <% education.forEach((data, index) => { %>
+        <div id="section_item">
+          <% if (data.Grades == "") { %>
+            <p><b><%= data.Title %></b>, <%= data.Institution %></p>
+          <% } else { %>
+            <p><b><%= data.Title %></b>, <%= data.Institution %>, <%= data.Grades %></p>
+          <% }; %>
+          <p><small><i><%= data.Years %></i></small></p>
+        </div>
+      <% }) %>
+    </div>
   </div>  
 
   <div class="Work_Experience">
     <div id="section_title">
-      <hr><b>Work/Professional Experience</b><hr>
+      <b>Work/Professional Experience</b>
     </div>
-    <% work_experience.forEach((data, index) => { %>
-      <p><b><%= data.Institution %></b>, <%= data.Title %></p>
-      <p><small><i><%= data.Years %></i></small></p>
-      <ul>
-        <% data.Description.forEach(des => { %>
-          <li><%= des %></li>
-        <% }) %>
-      </ul>
 
-      <!-- Add line break between entries -->
-      <% if (index !== work_experience.length - 1) { %>
-        <br>
-      <% }; %>
-    <% }) %>
+    <div id="section_body">
+      <% work_experience.forEach((data, index) => { %>
+        <div id="section_item">
+          <p><b><%= data.Institution %></b>, <%= data.Title %></p>
+          <p><small><i><%= data.Years %></i></small></p>
+          <ul>
+            <% data.Description.forEach(des => { %>
+              <li><%= des %></li>
+            <% }) %>
+          </ul>
+        </div>
+      <% }) %>
+    </div>
   </div>
 
-  <div class="Skills/Certifications">
+  <div class="Skills">
     <div id="section_title">
-      <hr><b>Skills/Certifications</b><hr>
+      <b>Skills/Certifications</b>
     </div>
-    <ul>
-      <% skill.forEach(data => { %>
-        <li><%= data %></li>
-      <% }) %>
-    </ul>
-  </div><hr>
 
-  <script src="app.js" defer></script>
+    <div id="section_body">
+      <ul>
+        <% skill.forEach(data => { %>
+          <li><%= data %></li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
