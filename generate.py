@@ -1,7 +1,6 @@
 import os
 import datetime
 import subprocess
-import time
 
 if "output" not in os.listdir("."):
         os.mkdir("./output")

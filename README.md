@@ -1,6 +1,6 @@
 # My Resume Builder
 
-Create a file `info.json`, with the following structure. Store the file in the input folder.
+Create `info.json` file in the input folder. Write the file with the following structure. An example can be found in the example.json file.
 
     {
         "Name": "",
@@ -35,14 +35,14 @@ Create a file `info.json`, with the following structure. Store the file in the i
         ]
     }
 
-You can also refer to example.json file.
-
 ## Generating resume
+Generated pdf file can be found in the output folder.
+
 ### On Nix
 
 Initialise the development environment in the flake with `nix develop`, and run `generate`.
 
 ### Other platforms
-* Ensure Chromium, NodeJS and python 3 are installed. 
+* Ensure Chromium, NodeJS and Python3 are installed. 
 * Open the current folder in the terminal and run `npm install`.
 * Generate resume with `python generate.py`.
