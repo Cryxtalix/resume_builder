@@ -43,8 +43,6 @@ You can also refer to example.json file.
 Initialise the development environment in the flake with `nix develop`, and run `generate`.
 
 ### Other platforms
-* Install Chromium and NodeJS. 
+* Ensure Chromium, NodeJS and python 3 are installed. 
 * Open the current folder in the terminal and run `npm install`.
-* Start node server with `node app.js & node_pid=$!`.
-* Generate resume with `chromium --headless --no-pdf-header-footer --print-to-pdf="resume.pdf" http://localhost:3000`.
-* Kill Node server with `kill $node_pid`.
+* Generate resume with `python generate.py`.
