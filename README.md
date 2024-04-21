@@ -38,11 +38,11 @@ Create `info.json` file in the input folder. Write the file with the following s
 ## Generating resume
 Generated pdf file can be found in the output folder.
 
-### On Nix
+### With Nix/NixOS
 
 Initialise the development environment in the flake with `nix develop`, and run `generate`.
 
-### Other platforms
+### With other platforms
 * Ensure Chromium, NodeJS and Python3 are installed. 
 * Open the current folder in the terminal and run `npm install`.
 * Generate resume with `python generate.py`.

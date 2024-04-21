@@ -21,6 +21,20 @@
     <% }) %>
     <p><small><%= text %></small></p>
   </div>
+
+  <div class="Introduction">
+    <div id="section_title">
+      <b>About me</b>
+    </div>
+
+    <div id="section_body">
+      <% intro.forEach((data, index) => { %>
+        <div id="section_item">
+          <p><%= data %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
   
   <div class="Education">
     <div id="section_title">
@@ -74,6 +88,8 @@
       </ul>
     </div>
   </div>
+
+  <a href="https://github.com/Cryxtalix">Github</a>
 
   <script src="app.js"></script>
 </body>

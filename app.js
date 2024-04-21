@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
         res.render('index', {
                 name: json.Name,
                 info: json.Info,
+                intro: json.Introduction,
                 education: json.Education,
                 work_experience: json.Work_Experience,
                 skill: json.Skill
