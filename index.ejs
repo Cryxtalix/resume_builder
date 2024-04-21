@@ -10,86 +10,91 @@
 </head>
 <body>
 
-  <div class="Name">
-    <h1><%= name %></h1>
-  </div>
-
-  <div class="Info">
-    <% let text = "|"; %>
-    <% info.forEach(data => { %>
-      <% text += ` ${data} |`; %>
-    <% }) %>
-    <p><small><%= text %></small></p>
-  </div>
-
-  <div class="Introduction">
-    <div id="section_title">
-      <b>About me</b>
+  <div class="Sidebar">
+    <div class="Name">
+      <h1><%= name %></h1>
     </div>
 
-    <div id="section_body">
-      <% intro.forEach((data, index) => { %>
-        <div id="section_item">
-          <p><%= data %></p>
-        </div>
-      <% }) %>
-    </div>
-  </div>
-  
-  <div class="Education">
-    <div id="section_title">
-      <b>Education</b>
-    </div>
-
-    <div id="section_body">
-      <% education.forEach((data, index) => { %>
-        <div id="section_item">
-          <% if (data.Grades == "") { %>
-            <p><b><%= data.Title %></b>, <%= data.Institution %></p>
-          <% } else { %>
-            <p><b><%= data.Title %></b>, <%= data.Institution %>, <%= data.Grades %></p>
-          <% }; %>
-          <p><small><i><%= data.Years %></i></small></p>
-        </div>
-      <% }) %>
-    </div>
-  </div>  
-
-  <div class="Work_Experience">
-    <div id="section_title">
-      <b>Work/Professional Experience</b>
-    </div>
-
-    <div id="section_body">
-      <% work_experience.forEach((data, index) => { %>
-        <div id="section_item">
-          <p><b><%= data.Institution %></b>, <%= data.Title %></p>
-          <p><small><i><%= data.Years %></i></small></p>
-          <ul>
-            <% data.Description.forEach(des => { %>
-              <li><%= des %></li>
-            <% }) %>
-          </ul>
-        </div>
-      <% }) %>
-    </div>
-  </div>
-
-  <div class="Skills">
-    <div id="section_title">
-      <b>Skills/Certifications</b>
-    </div>
-
-    <div id="section_body">
-      <ul>
-        <% skill.forEach(data => { %>
-          <li><%= data %></li>
+    <div class="Info">
+      <div id="section_item">
+        <% info.forEach(data => { %>
+          <p><small><%= data %></small></p>
         <% }) %>
-      </ul>
+        <% links.forEach(data => { %>
+          <p><small><a href=<%= data %>><%= data %></a></small></p>
+        <% }) %>
+      </div>
+    </div>
+
+    <div class="Introduction">
+      <div id="section_title">
+        <b>About me</b>
+      </div>
+
+      <div id="section_body">
+        <% intro.forEach((data, index) => { %>
+          <div id="section_item">
+            <p><%= data %></p>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+    
+    <div class="Education">
+      <div id="section_title">
+        <b>Education</b>
+      </div>
+
+      <div id="section_body">
+        <% education.forEach((data, index) => { %>
+          <div id="section_item">
+            <% if (data.Grades == "") { %>
+              <p><b><%= data.Title %></b>, <%= data.Institution %></p>
+            <% } else { %>
+              <p><b><%= data.Title %></b>, <%= data.Institution %>, <%= data.Grades %></p>
+            <% }; %>
+            <p><small><i><%= data.Years %></i></small></p>
+          </div>
+        <% }) %>
+      </div>
     </div>
   </div>
 
-  <a href="https://github.com/Cryxtalix">Github</a>
+  <div class="Content">
+    <div class="Work_Experience">
+      <div id="section_title">
+        <b>Work/Professional Experience</b>
+      </div>
+
+      <div id="section_body">
+        <% work_experience.forEach((data, index) => { %>
+          <div id="section_item">
+            <p><b><%= data.Institution %></b>, <%= data.Title %></p>
+            <p><small><i><%= data.Years %></i></small></p>
+            <ul>
+              <% data.Description.forEach(des => { %>
+                <li><%= des %></li>
+              <% }) %>
+            </ul>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <div class="Skills">
+      <div id="section_title">
+        <b>Skills/Certifications</b>
+      </div>
+
+      <div id="section_body">
+        <ul>
+          <% skill.forEach(data => { %>
+            <li><%= data %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

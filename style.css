@@ -1,15 +1,28 @@
+@page {
+        margin: 0!important;
+        margin-top: 0cm!important;
+        margin-bottom: 0cm!important;
+        margin-left: 0cm!important;
+        margin-right: 0cm!important;
+}
+
 .Name {
         line-height: 0.2;
         text-align: center;
 }
 
-.Info {
+.Info{
         line-height: 1.2;
-        text-align: center;
+        text-align: left;
+        padding: 1%;
+}
+
+.Introduction {
+        padding: 1%;
 }
 
 .Education {
-        padding-top: 0.5%;
+        padding: 1%;
 }
 
 .Work_Experience {
@@ -23,7 +36,8 @@
 #section_title {
         text-align: center;
         padding: 0.3%;
-        border-block: solid black;
+        border-block: solid;
+        border-color: inherit;
         border-radius: 0%;
 }
 
@@ -33,14 +47,36 @@
 }
 
 #section_item {
-        padding: 0.4%;
+        padding: 1%;
 }
 
 p {
         margin: 0%;
+        padding: 0.5%;
+}
+
+a {
+        color: inherit;
+        text-decoration: underline;
+}
+
+.Sidebar {
+        position: fixed;
+        padding: 2%;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 33%;
+        background-color: dimgray;
+        color: #fff;
+        box-sizing: border-box;
+}
+
+.Content {
+        margin-left: 33%;
+        padding: 2%;
 }
 
 body {
-        border-bottom: solid black;
         font-family: Arial, sans-serif;
 }

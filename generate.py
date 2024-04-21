@@ -21,7 +21,8 @@ try:
 
         subprocess.run([
                 "chromium", 
-                "--headless", 
+                "--headless",
+                "--no-margins",
                 "--no-pdf-header-footer",
                 f"--print-to-pdf=./output/{filename}",
                 line
