@@ -10,18 +10,22 @@
 </head>
 <body>
 
-  <div class="Sidebar">
+  <div class="Section1">
     <div class="Name">
       <h1><%= name %></h1>
     </div>
-
+    
     <div class="Info">
       <div id="section_item">
-        <% info.forEach(data => { %>
-          <p><small><%= data %></small></p>
-        <% }) %>
-        <% links.forEach(data => { %>
-          <p><small><a href=<%= data %>><%= data %></a></small></p>
+        <% info.forEach((data, index) => { %>
+          <% if (typeof data === "object") { %>
+            <p><small><a href=<%= Object.values(data) %>><%= Object.keys(data) %></a></small></p>
+          <% } else { %>
+            <p><small><%= data %></small></p>
+          <% } %>
+          <% if (index !== info.length - 1) { %>
+            <p><small> | </small></p>
+          <% } %>
         <% }) %>
       </div>
     </div>
@@ -60,7 +64,7 @@
     </div>
   </div>
 
-  <div class="Content">
+  <div class="Section2">
     <div class="Work_Experience">
       <div id="section_title">
         <b>Work/Professional Experience</b>
