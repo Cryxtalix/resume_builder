@@ -57,7 +57,5 @@ try:
 except:
         print("\nError. Please ensure dependencies are installed. If using Nix, run `nix develop`\n.")
 
-subprocess.run([
-        "rm",
-        "style.css"
-])
+subprocess.run(["rm","style.css"])
+subprocess.run(["xdg-open",f"output/{filename}"])
