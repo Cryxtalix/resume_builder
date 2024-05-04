@@ -3,22 +3,29 @@ import datetime
 import subprocess
 
 styles = os.listdir("./styles")
-if len(styles) > 1:
-        print(f"These are the available styles:")
-        for i in range(len(styles)):
-                print(f"{i+1}: {styles[i]}")
 
 while 1:
+        print("==============================================")
+        if len(styles) > 1:
+                print(f"These are the available styles:")
+                for i in range(len(styles)):
+                        print(f"{i+1}: {styles[i]}")
+
+        user_selected_style = input("Please select a style: ")
+
         try:
-                user_selected_style = int(input("Please select a style: "))
-
-                if user_selected_style <= 0 or user_selected_style > len(styles) + 1:
-                        print("Please select a valid option.")
-                else:
-                        break
+                user_selected_style = int(user_selected_style)
         except:
-                print("Please select a valid option.")
+                print("Please enter a number.")
+                continue
 
+        if user_selected_style < 1 or user_selected_style > len(styles):
+                print(f"Please enter a number between 1 and {len(styles)}.")
+                continue
+        else:
+                break
+
+# Create symlink to style.css at folder root
 subprocess.run([
         "ln",
         "-s",
@@ -57,5 +64,7 @@ try:
 except:
         print("\nError. Please ensure dependencies are installed. If using Nix, run `nix develop`\n.")
 
+# Remove symlink
 subprocess.run(["rm","style.css"])
+# Open generated file as preview
 subprocess.run(["xdg-open",f"output/{filename}"])

@@ -1,6 +1,6 @@
 # My Resume Builder
 
-Create `info.json` file in the input folder. Write the file with the following structure. An example can be found in the example.json file.
+Create `info.json` file in the `input` folder. Write the file with the following structure. An example can be found in the example.json file.
 
     {
         "Name": "",
@@ -34,6 +34,8 @@ Create `info.json` file in the input folder. Write the file with the following s
             ...
         ]
     }
+
+You can create multiple formatting styles by placing CSS stylesheets in the `styles` folder. The generate script will prompt you to select your desired style. The name of the file does not matter, so it is recommended to use a descriptive name.
 
 ## Generating resume
 Generated pdf file can be found in the output folder.
